@@ -170,3 +170,11 @@ class TournamentView:
             f"\n🏆 Vainqueur du tournoi '{tournament.name}' : "
             f"{winner.first_name} {winner.last_name} 🏆\n"
         )
+
+    @staticmethod
+    def notify_tournament_already_started():
+        print("Impossible d'ajouter un joueur : le tournoi a déjà commencé.")
+
+    @staticmethod
+    def notify_odd_number_of_players():
+        print("Le nombre de joueurs inscrits doit être pair pour démarrer un tour.")
