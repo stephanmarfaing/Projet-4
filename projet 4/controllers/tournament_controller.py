@@ -38,6 +38,10 @@ class TournamentController:
 
         tournament = db.get_tournament_by_id(tournament_id)
 
+        if tournament.current_round > 0:
+            TournamentView.notify_tournament_already_started()
+            return
+
         national_id = TournamentView.get_player_national_id()
         player = db.find_player_by_national_id(national_id)
 
