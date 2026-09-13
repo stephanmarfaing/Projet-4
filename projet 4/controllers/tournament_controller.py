@@ -74,6 +74,9 @@ class TournamentController:
             if len(tournament.player_ids) < 2:
                 TournamentView.notify_not_enough_players()
                 return
+            if len(tournament.player_ids) % 2 != 0:
+                TournamentView.notify_odd_number_of_players()
+                return
             current_round = TournamentController._generate_next_round(tournament)
 
         TournamentController._play_round(tournament, current_round)
